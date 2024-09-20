@@ -1,8 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 def fetch_events():
-    url = "http://57.180.187.67/api/v1/event/"
+    url = os.environ.get("URL") + "/api/v1/event/"
     params = {"keyword": "python"}
     headers = {"User-Agent": "curl/7.81.0"}
     response = requests.get(url, params=params, headers=headers)
