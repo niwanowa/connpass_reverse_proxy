@@ -1,5 +1,6 @@
 import requests
 import os
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -20,4 +21,5 @@ def fetch_events():
 if __name__ == "__main__":
     events = fetch_events()
     if events:
-        print(events)
+        print(json.dumps(events, indent=4, ensure_ascii=False))
+
